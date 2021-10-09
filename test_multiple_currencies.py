@@ -3,10 +3,8 @@ from typing import ClassVar
 
 def test_multiplication():
     five: Dollar = Dollar(5)
-    product: Dollar = five.times(2)
-    assert 10 == product.amount
-    product: Dollar = five.times(3)
-    assert 15 == product.amount
+    assert Dollar(10) == five.times(2)
+    assert Dollar(15) == five.times(3)
 
 
 def test_equality():
@@ -24,4 +22,4 @@ class Dollar:
         return Dollar(self.amount * multiplier)
 
     def equals(self, object: ClassVar) -> bool:
-        return True
+        return object.amount == self.amount
