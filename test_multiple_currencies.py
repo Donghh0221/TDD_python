@@ -18,3 +18,7 @@ class TestFranc:
         assert Franc(10).amount == five.times(2).amount
         assert Franc(15).amount == five.times(3).amount
 
+    def test_equality(self):
+        assert Dollar(5).equals(Dollar(5))
+        assert not Dollar(6).equals(Dollar(5))
+
